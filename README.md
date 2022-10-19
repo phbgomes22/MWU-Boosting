@@ -26,6 +26,7 @@ The dispersion of accuracies among the pixels can be seen in the image below.
   <img src="heatmapSingle.png">
 </p>
 
+
 #### The MWU-Boosting
 
 Having trained the single-pixel classifiers, we use the boosting algorithm following the Multiplicative Weight Update method to create a better combined classifier. 
@@ -35,6 +36,7 @@ Without getting into much details, at each iteration the algorithm finds a gamma
 This process happens until a defined time _T_ or until there are no more gamma-weak classifiers for the distribution _p_.
 
 The accuracy of the combined classifier at each iteraction of the boosting algorithm is displayed in the image below.
+
 
 <p align="center">
   <img src="acc_boosting.png">
