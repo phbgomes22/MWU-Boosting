@@ -20,6 +20,8 @@ In order to evaluate the boosting algorithm in action, we first train single-pix
 
 Since very little information is provided, many single-pixel classifiers will have close to 0.5 accuracies, while a few classifiers that see relevant pixels may have a better accuracy.
 
+The classifiers were trained using _sklean_ Decision Trees. The MNIST dataset used was the one available in Keras datasets.
+
 The dispersion of accuracies among the pixels can be seen in the image below.
 
 <p align="center">
@@ -31,9 +33,9 @@ The dispersion of accuracies among the pixels can be seen in the image below.
 
 Having trained the single-pixel classifiers, we use the boosting algorithm following the Multiplicative Weight Update method to create a better combined classifier. 
 
-Without getting into much details, at each iteration the algorithm finds a gamma-weak classifier for an distribution _p_ over the training data. After that, we update an reward array _r_ with a value _r(i) = 1_ if the sample _i_ was misslabeled by the classifier, and _r(i) = 0_ otherwhise. Finally, we send the reward array _r_ to the MWU algorithm to get a new distribution _p_.
+At each iteration the algorithm finds a gamma-weak classifier for an distribution _p_ over the training data. After that, we update an reward array _r_ with a value _r(i) = 1_ if the sample _i_ was mislabeled by the classifier, and _r(i) = 0_ otherwhise. Finally, we send the reward array _r_ to the MWU algorithm to get a new distribution _p_.
 
-This process happens until a defined time _T_ or until there are no more gamma-weak classifiers for the distribution _p_.
+This steps happens until a defined time _T_ or until there are no more gamma-weak classifiers for the distribution _p_.
 
 The accuracy of the combined classifier at each iteraction of the boosting algorithm is displayed in the image below.
 
