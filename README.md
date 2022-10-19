@@ -22,7 +22,7 @@ Since very little information is provided, many single-pixel classifiers will ha
 
 The classifiers were trained using _sklean_ Decision Trees. The MNIST dataset used was the one available in Keras datasets.
 
-The dispersion of accuracies among the pixels can be seen in the image below.
+The comparrison of accuracies among the single-pixel classifiers can be seen in the image below.
 
 <p align="center">
   <img src="heatmapSingle.png">
